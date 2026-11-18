@@ -15,6 +15,14 @@
 <body>
 <?php
 
+require('connexion.php');
+
+// Récupération des données de la table Personne
+$resultat = $base->query('SELECT * FROM jeu');
+
+echo "Nombre de jeux:".$resultat->rowCount();
+
+$resultat->closeCursor(); // Fermeture de la requête
 ?>
 </body>
 </html>

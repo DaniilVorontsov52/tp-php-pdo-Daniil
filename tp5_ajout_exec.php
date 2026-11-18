@@ -15,4 +15,37 @@
   Réponse :
 */
 
+require 'connexion.php';
+
+$nombre = $base->exec(
+"INSERT INTO jeu (titre, genre, annee, note)
+VALUES ('Pac-Man', 'Action', 1980, 16)"
+);
+
+$id = $base->lastInsertId();
+
+echo 'Pac-Man ajouté avec l\'id ' . $id . '<br>';
+
+//
+
+$nombre = $base->exec(
+"UPDATE jeu SET note = 15 WHERE titre = 'Fortnite'"
+);
+
+echo $nombre . ' jeu(x) modifié(s).<br>';
+
+//
+
+$nombre = $base->exec(
+"DELETE FROM jeu WHERE titre = 'Pac-Man'"
+);
+
+echo $nombre . ' jeu(x) supprimé(s).<br>';
+
+echo "
+Question : que se passerait-il avec DELETE FROM jeu sans WHERE ?
+  Réponse :
+tout supprimer";
 ?>
+
+

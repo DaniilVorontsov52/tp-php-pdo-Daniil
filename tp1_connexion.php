@@ -10,5 +10,15 @@
 
   Expérience : remplacer "ludotheque" par "ludotek". Quel message obtenez-vous ?
 */
+  try {
+$base = new PDO('mysql:host=127.0.0.1;dbname=ludotheque', 'root', '');
+ var_dump("COnnection etablie");
+ 
 
+}
+catch (Exception $e) {
+die('Erreur : ' . $e->getMessage());
+}
+
+echo "Connexion réussie !";
 ?>
